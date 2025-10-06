@@ -19,7 +19,6 @@
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
 
-<!-- Header -->
 <header class="site-header" role="banner">
     <nav class="nav container" aria-label="Primary">
         <button class="hamburger" aria-label="Open menu" aria-controls="mobile-drawer" aria-expanded="false">
@@ -112,28 +111,25 @@
         <button id="openWishlistMobile" class="row-btn"><img class="icon" src="assets/icons/heart.svg" alt="" /> Wishlist</button>
     </div>
 </aside>
-
 <div class="overlay" data-overlay hidden></div>
 
 <main id="main">
+    <!-- Hero: background image covers the right side -->
     <section class="hero">
         <div class="container hero-inner">
             <div class="hero-copy">
-                <h1>All Day. All Essential. All You.</h1>
+                <h1>All Day Essentials</h1>
                 <p>Soft-focus textures and skin-first pigments designed for everyday luxury—crafted to look effortless from AM to PM.</p>
                 <div class="hero-ctas">
                     <a href="#content" class="btn btn-black">Shop Now</a>
                     <a href="#content" class="btn btn-outline">View Collections</a>
                 </div>
             </div>
-            <div class="hero-art">
-                <img src="assets/images/hero-model.jpg" alt="ADE model showcasing soft pink look" loading="lazy" />
-            </div>
-            <div class="hero-gradient" aria-hidden="true"></div>
+            <!-- no hero-art <img>; image is applied via CSS ::after -->
         </div>
     </section>
 
-    <section id="content" class="content container"></section>
+    <section id="content" class="content container" aria-live="polite"></section>
 </main>
 
 <aside id="cart-drawer" class="cart-drawer" aria-hidden="true">
@@ -148,7 +144,7 @@
     </div>
 </aside>
 
-<!-- Register Modal (hidden by default) -->
+<!-- Register Modal -->
 <div id="register-modal" class="modal" hidden>
     <div class="modal-card">
         <div class="modal-header">
