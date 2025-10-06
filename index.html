@@ -1,150 +1,187 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
+    <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>ADE – All Day Essentials</title>
-    <meta name="description" content="ADE – modern, elegant and user-friendly cosmetics shopping experience." />
-
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
-
+    <meta name="description" content="ADE – All Day Essentials: feminine, pastel, luxury cosmetics. All Day. All Essential. All You." />
+    <meta property="og:title" content="ADE – All Day Essentials" />
+    <meta property="og:description" content="Feminine, pastel, luxury cosmetics on an off-white canvas." />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="assets/images/hero-model.jpg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="styles/styles.css" />
-    <link rel="icon" href="assets/icons/heart.svg" type="image/svg+xml" />
+    <link rel="icon" href="assets/images/logo-ade.png" />
+    <script defer src="scripts/app.js"></script>
 </head>
 <body>
-<!-- Header / Navigation -->
-<header class="header">
-    <div class="topbar">
-        <span class="top-item">Address / Delivery</span>
-        <span class="top-item">Closest Store</span>
-        <span class="top-item">Help</span>
-    </div>
+<a class="skip-link" href="#main">Skip to content</a>
 
-    <nav class="nav">
-        <a class="logo" href="/">ADE</a>
-        <ul class="menu">
-            <li><a href="#">Makeup</a></li>
-            <li><a href="#">What’s New</a></li>
-            <li><a href="#">Gifts</a></li>
-            <li><a href="#">ADE Woman</a></li>
-            <li><a href="#">Bestsellers</a></li>
+<!-- Header -->
+<header class="site-header" role="banner">
+    <nav class="nav container" aria-label="Primary">
+        <button class="hamburger" aria-label="Open menu" aria-controls="mobile-drawer" aria-expanded="false">
+            <img src="assets/icons/menu.svg" alt="" />
+        </button>
+
+        <a class="logo" href="#" aria-label="ADE Home">
+            <img src="assets/images/logo-ade.png" alt="" onerror="this.replaceWith(Object.assign(document.createElement('span'),{textContent:'ADE',className:'logo-fallback'}))" />
+        </a>
+
+        <ul class="menu desktop-only" role="menubar">
+            <li role="none"><a role="menuitem" href="#">Bestsellers</a></li>
+            <li role="none"><a role="menuitem" href="#">What’s New</a></li>
+            <li role="none"><a role="menuitem" href="#">Trend</a></li>
+            <li role="none"><a role="menuitem" href="#">Gifts</a></li>
+            <li role="none"><a role="menuitem" href="#">ADE’s Lover Program</a></li>
         </ul>
+
         <div class="actions">
-            <button class="icon-btn" aria-label="Search"><img src="assets/icons/search.svg" alt="Search"></button>
-            <button class="icon-btn" aria-label="Wishlist"><img src="assets/icons/heart.svg" alt="Wishlist"></button>
-            <button class="icon-btn" aria-label="Cart"><img src="assets/icons/cart.svg" alt="Cart"></button>
-            <button class="login-btn"><img src="assets/icons/user.svg" alt="" aria-hidden="true"> Log in</button>
+            <div class="search" role="search">
+                <img class="icon" src="assets/icons/search.svg" alt="" />
+                <input id="searchInput" type="search" placeholder="Search" aria-controls="search-panel" aria-expanded="false" />
+                <div id="search-panel" class="search-panel" role="listbox" aria-label="Search suggestions" hidden>
+                    <div class="search-section">
+                        <p class="muted">Recent searches</p>
+                        <ul class="search-list">
+                            <li>lip balm</li>
+                            <li>waterproof mascara</li>
+                            <li>rose blush</li>
+                        </ul>
+                    </div>
+                    <div class="search-section">
+                        <p class="muted">Quick categories</p>
+                        <ul class="chip-row">
+                            <li><button class="chip" data-tab="EYES">Eyes</button></li>
+                            <li><button class="chip" data-tab="LIPS">Lips</button></li>
+                            <li><button class="chip" data-tab="FACE">Face</button></li>
+                            <li><button class="chip" data-tab="TOOLS">Tools</button></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <a href="#" class="register-btn" id="openRegister">
+                <img class="icon" src="assets/icons/user.svg" alt="" />
+                <span>Register</span>
+            </a>
+
+            <button class="icon-btn" id="openWishlist" aria-label="Open wishlist">
+                <img class="icon" src="assets/icons/heart.svg" alt="" />
+            </button>
+
+            <button class="icon-btn" id="openCart" aria-label="Open cart" aria-haspopup="dialog" aria-controls="cart-drawer">
+                <img class="icon" src="assets/icons/bag.svg" alt="" />
+            </button>
         </div>
-        <button class="burger" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
     </nav>
+
+    <div class="tabbar" role="tablist" aria-label="Categories">
+        <div class="tabbar-inner container">
+            <button class="tab active" data-tab="ALL">ALL</button>
+            <button class="tab" data-tab="FACE">FACE</button>
+            <button class="tab" data-tab="LIPS">LIPS</button>
+            <button class="tab" data-tab="SKIN">SKIN</button>
+            <button class="tab" data-tab="BROWS">BROWS</button>
+            <button class="tab" data-tab="EYES">EYES</button>
+            <button class="tab" data-tab="TOOLS">TOOLS</button>
+            <button class="tab" data-tab="SETS">SETS</button>
+            <button class="tab" data-tab="ADE’S COLLECTION">ADE’S COLLECTION</button>
+        </div>
+    </div>
 </header>
 
-<!-- Hero -->
-<section class="hero">
-    <img class="hero-bg" src="assets/images/hero.jpg" alt="ADE collection hero">
-    <div class="hero-content">
-        <h1>All Day. All Essential. All You.</h1>
-        <p>Discover beauty that lasts — soft pink & rose-gold elegance.</p>
-        <div class="cta-row">
-            <a class="btn primary" href="#">Shop Now</a>
-            <a class="btn outline" href="#collections">View Collections</a>
-        </div>
-        <div class="trust">
-            <span>Free returns</span><span>Secure checkout</span><span>Fast delivery</span>
-        </div>
+<!-- Mobile drawer -->
+<aside id="mobile-drawer" class="mobile-drawer" aria-hidden="true">
+    <div class="drawer-header">
+        <span class="drawer-title">Menu</span>
+        <button class="drawer-close" aria-label="Close menu">&times;</button>
     </div>
-</section>
-
-<!-- Quick Categories -->
-<section class="quick-cats">
-    <h2>Shop by Category</h2>
-    <div class="grid">
-        <a class="tile" href="#"><img src="assets/images/lipstick.jpg" alt=""><span>Lips</span></a>
-        <a class="tile" href="#"><img src="assets/images/brush.jpg" alt=""><span>Eyes</span></a>
-        <a class="tile" href="#"><img src="assets/images/mirror.jpg" alt=""><span>Face</span></a>
-        <a class="tile" href="#"><img src="assets/images/set.jpg" alt=""><span>Sets</span></a>
-        <a class="tile" href="#"><img src="assets/images/brush.jpg" alt=""><span>Brows</span></a>
-        <a class="tile" href="#"><img src="assets/images/lipstick.jpg" alt=""><span>Skin</span></a>
-        <a class="tile" href="#"><img src="assets/images/brush.jpg" alt=""><span>Tools</span></a>
+    <ul class="drawer-menu">
+        <li><a href="#">Bestsellers</a></li>
+        <li><a href="#">What’s New</a></li>
+        <li><a href="#">Trend</a></li>
+        <li><a href="#">Gifts</a></li>
+        <li><a href="#">ADE’s Lover Program</a></li>
+    </ul>
+    <div class="drawer-actions">
+        <a href="#" id="openRegisterMobile"><img class="icon" src="assets/icons/user.svg" alt="" /> Register</a>
+        <button id="openCartMobile" class="row-btn"><img class="icon" src="assets/icons/bag.svg" alt="" /> Cart</button>
+        <button id="openWishlistMobile" class="row-btn"><img class="icon" src="assets/icons/heart.svg" alt="" /> Wishlist</button>
     </div>
-</section>
+</aside>
 
-<!-- ADE’s Collection -->
-<section id="collections" class="collection">
-    <div class="section-head">
-        <h2>ADE’s Collection</h2>
-        <a class="link" href="#">View all</a>
-    </div>
-    <div id="collection-grid" class="product-grid"><!-- JS renders cards --></div>
-</section>
+<div class="overlay" data-overlay hidden></div>
 
-<!-- New & Bestsellers -->
-<section class="new-best">
-    <div class="section-head"><h2>What’s New</h2></div>
-    <div id="new-grid" class="product-grid"></div>
-
-    <div class="section-head spaced"><h2>Bestsellers</h2></div>
-    <div id="best-grid" class="product-grid"></div>
-</section>
-
-<!-- Gift Sets -->
-<section class="gifts">
-    <h2>Luxury Gift Sets</h2>
-    <div class="gift-grid">
-        <article class="gift-card">
-            <img src="assets/images/set.jpg" alt="ADE gift set">
-            <div class="gift-body">
-                <h3>Rose-Gold Essentials Set</h3>
-                <p>Curated elegance in a premium box.</p>
-                <a class="btn small" href="#">Shop the set</a>
+<main id="main">
+    <section class="hero">
+        <div class="container hero-inner">
+            <div class="hero-copy">
+                <h1>All Day. All Essential. All You.</h1>
+                <p>Soft-focus textures and skin-first pigments designed for everyday luxury—crafted to look effortless from AM to PM.</p>
+                <div class="hero-ctas">
+                    <a href="#content" class="btn btn-black">Shop Now</a>
+                    <a href="#content" class="btn btn-outline">View Collections</a>
+                </div>
             </div>
-        </article>
-        <article class="gift-card">
-            <img src="assets/images/set.jpg" alt="ADE gift set">
-            <div class="gift-body">
-                <h3>Everyday Glow Set</h3>
-                <p>Everything you need, all day long.</p>
-                <a class="btn small" href="#">Shop the set</a>
+            <div class="hero-art">
+                <img src="assets/images/hero-model.jpg" alt="ADE model showcasing soft pink look" loading="lazy" />
             </div>
-        </article>
+            <div class="hero-gradient" aria-hidden="true"></div>
+        </div>
+    </section>
+
+    <section id="content" class="content container"></section>
+</main>
+
+<aside id="cart-drawer" class="cart-drawer" aria-hidden="true">
+    <div class="cart-header">
+        <h2>Your Bag</h2>
+        <button class="drawer-close cart-close" aria-label="Close cart">&times;</button>
     </div>
-</section>
+    <div id="cartItems" class="cart-items"></div>
+    <div class="cart-footer">
+        <div class="subtotal">Subtotal: <span id="cartSubtotal">₺0</span></div>
+        <button class="btn btn-black" id="checkoutBtn">Checkout</button>
+    </div>
+</aside>
 
-<!-- Newsletter -->
-<section class="newsletter">
-    <h2>Stay in the ADE loop</h2>
-    <form class="newsletter-form" action="#" method="post">
-        <label class="sr-only" for="email">Email</label>
-        <input id="email" type="email" placeholder="Enter your email" required>
-        <button class="btn primary" type="submit">Subscribe</button>
-    </form>
-    <p class="note">By subscribing you agree to receive ADE emails.</p>
-</section>
+<!-- Register Modal (hidden by default) -->
+<div id="register-modal" class="modal" hidden>
+    <div class="modal-card">
+        <div class="modal-header">
+            <h2>Create account</h2>
+            <button class="modal-close" aria-label="Close">&times;</button>
+        </div>
+        <form id="registerForm" novalidate>
+            <label>Email
+                <input type="email" name="email" required placeholder="you@example.com" />
+            </label>
+            <label>Password
+                <input type="password" name="password" required minlength="6" placeholder="Min 6 characters" />
+            </label>
+            <button type="submit" class="btn btn-black">Create account</button>
+        </form>
+    </div>
+</div>
 
-<!-- Footer -->
-<footer class="footer">
-    <div class="cols">
-        <div>
-            <h4>About</h4>
-            <ul><li><a href="#">Our Story</a></li><li><a href="#">Sustainability</a></li></ul>
-        </div>
-        <div>
-            <h4>Support</h4>
-            <ul><li><a href="#">Shipping & Returns</a></li><li><a href="#">FAQ</a></li></ul>
-        </div>
-        <div>
-            <h4>Stores</h4>
-            <ul><li><a href="#">Store Locator</a></li><li><a href="#">Closest Store</a></li></ul>
-        </div>
-        <div>
-            <h4>Follow</h4>
-            <ul><li><a href="#">Instagram</a></li><li><a href="#">TikTok</a></li></ul>
-        </div>
+<div id="toast" class="toast" hidden></div>
+
+<footer class="site-footer">
+    <div class="container footer-grid">
+        <ul class="footer-links">
+            <li><a href="#">About</a></li>
+            <li><a href="#">Shipping & Returns</a></li>
+            <li><a href="#">FAQ</a></li>
+            <li><a href="#">Store Locator</a></li>
+            <li><a href="#">Privacy</a></li>
+            <li><a href="#">Instagram</a></li>
+            <li><a href="#">TikTok</a></li>
+        </ul>
     </div>
     <div class="legal">© ADE · All rights reserved</div>
 </footer>
-
-<script src="scripts/app.js"></script>
 </body>
 </html>
